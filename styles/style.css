@@ -1,0 +1,249 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --vermelho: #e50914;
+  --preto: #000000;
+  --carousel-growth-factor: 1.1 !important;
+  --carousel-tile-width: 225px !important;
+}
+
+header {
+  height: 7vh;
+  display: flex;
+  align-items: center;
+  background-color: #0a0a0a;
+}
+
+body {
+  background-color: var(--preto);
+  font-family: Helvetica, sans-serif, Arial;
+  color: #ffffff;
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+  padding: 0 25px;
+  width: 100%;
+}
+
+.logo {
+  display: flex;
+}
+
+.logo span {
+  color: var(--vermelho);
+  font-size: 2.7em;
+  font-family: impact;
+  display: block;
+  transform: scaleX(70) rotateY(89.4deg);
+}
+
+nav {
+  padding-left: 5%;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #aaa;
+  margin-right: 25px;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.nav-link:hover {
+  color: #fff;
+}
+
+.main-film {
+  font-size: 1.1em;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) 100%),
+    linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 25%),
+    url("../img/rick_and_morty_poster.jpg");
+  height: 450px;
+  background-size: 60% 100%;
+  background-position: right;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 3%;
+}
+
+.play {
+  background-color: transparent;
+  border: none;
+  height: 50px;
+  position: absolute;
+  outline: none;
+  top: 250px;
+  right: calc(30% - 50px);
+}
+
+.play:active {
+  transform: translateY(1px);
+}
+
+.play:hover {
+  cursor: pointer;
+}
+
+.film-title {
+  font-size: 3em;
+  margin: 100px 0 10px;
+}
+
+.description {
+  width: 37.5%;
+  font-size: 1em;
+  margin-bottom: 75px;
+}
+
+.btn {
+  border: none;
+  height: 50px;
+  outline: none;
+  padding: 15px;
+  border-radius: 5px;
+  margin-right: 50px;
+  background-color: rgba(255, 255, 255, 0.75);
+  transition: 0.3s ease-in-out all;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background-color: #ff0000c0;
+  color: #fff;
+}
+
+.btn i {
+  margin-right: 10px;
+}
+
+.detail {
+  color: #aaa;
+  margin-bottom: 75px;
+}
+
+.stars {
+  color: var(--vermelho);
+}
+
+.carousel {
+  margin-top: 75px !important;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+/* media queries*/
+
+@media (max-width: 1024px) {
+  .description,
+  .detail {
+    margin-bottom: 5%;
+  }
+}
+
+@media (max-width: 755px) {
+  .nav-link:nth-child(1),
+  .nav-link:nth-child(4),
+  .play {
+    display: none;
+  }
+
+  .main-film {
+    background-size: 100% 100% !important;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) 100%),
+      linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 25%),
+      url("../img/rick_and_morty_poster.jpg");
+  }
+
+  .description {
+    width: 50%;
+  }
+}
+
+@media (max-width: 520px) {
+  header {
+    background-color: transparent;
+    height: 0;
+    padding-top: 30px;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  .logo span:not(.first-letter) {
+    display: none;
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  .nav-link {
+    font-size: 1em;
+    margin: 0 0 0 5%;
+  }
+
+  .description {
+    display: none;
+  }
+
+  .main-film {
+    position: absolute;
+    top: 0;
+    text-align: center;
+    padding: 0;
+    width: 100%;
+  }
+
+  .main-film .container {
+    margin: 300px auto 0;
+  }
+
+  .detail {
+    margin-bottom: 50px;
+  }
+
+  section {
+    margin-top: 530px;
+  }
+
+  .carousel img {
+    width: 105px;
+    height: 105px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+  }
+
+  :root {
+    --carousel-tile-width: 120px !important;
+  }
+
+  .buttons {
+    display: flex;
+  }
+
+  .btn {
+    margin: 0 auto 10px;
+    font-size: 0.6em;
+    padding: 7.5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn i {
+    margin: 0 auto 10px;
+    font-size: 1em;
+  }
+}
